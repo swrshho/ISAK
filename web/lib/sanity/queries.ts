@@ -2,7 +2,10 @@ export const postsQuery = `
     *[_type == "post"]{
     _id,
     title,
-    banner,
+    banner{
+    _type,
+    asset,
+  },
     body,
     slug,
     publishedAt

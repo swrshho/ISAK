@@ -2,9 +2,11 @@ import { client } from "./clients";
 import { postsQuery, postBySlugQuery } from "./queries";
 
 export async function getPosts() {
-    return client.fetch(postsQuery);
+    const data = await client.fetch(postsQuery);
+    console.log("Sanity response:", data[0].banner.asset);
+    return data
 }
 
 export async function getPostsBySlug(slug: string) {
-    return client.fetch(getPostsBySlug, { slug });
+    return await client.fetch(postBySlugQuery, { slug });
 }
