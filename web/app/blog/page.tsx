@@ -4,14 +4,14 @@ import ImageComponent from "@/components/ImageComponent";
 export const revalidate = 10
 
 export default async function BlogPage() {
-    const posts = await getPosts()
+    // const posts = await getPosts()
 
     return (
         <main className="max-w-4xl mx-auto p-6 flex ">
             <h1 className="text-3xl font-bold mb-6">Blogs</h1>
 
             <div className="space-y-4">
-                {posts.map((post: any) => (
+                {/* {posts.map((post: any) => (
                     <div
                         key={post._id}
                         className="border rounded-lg p-4 hover:shadow-md transition"
@@ -23,7 +23,8 @@ export default async function BlogPage() {
                             {new Date(post.publishedAt).toDateString()}
                         </p>
                     </div>
-                ))}
+                ))} */}
+                blogssss
             </div>
         </main>
     )
