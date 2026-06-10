@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@source "../app/";
+@source "../components/";
+@source "../components/layout/";
+@source "../lib";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  ---primary: #221d22;
+  --secondary: #16b0ad;
+  --accent: #f4b544;
+  --secondary-dark: #0d7c7a;
+  --secondary-darker: #1C6867;
+  --secondary-light: #ddf7f6;
+  --accent-light: #fff4d8;
+  --success: #2e9b62;
+  --warning: #e9a11b;
+  --error: #d64545;
+  --info: #2d7ff9;
+  --academic-navy: #24324a;
+  --border-white: #eaeaea;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-secondary-darker: var(--secondary-darker);
+  --color-secondary-light: var(--secondary-light);
+  --color-accent-light: var(--accent-light);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+  --color-academic-navy: var(--academic-navy);
+  --color-border-white: var(--border-white);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #F9F2DF;
+    --foreground: #171717;
+  }
+}
+
+body {
+  background: var(--accent-light);
+  color: var(--foreground);
+}

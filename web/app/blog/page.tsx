@@ -7,7 +7,7 @@ export default async function BlogPage() {
     const posts = await getPosts()
 
     return (
-        <main className="max-w-4xl mx-auto p-6">
+        <main className="max-w-4xl mx-auto p-6 flex ">
             <h1 className="text-3xl font-bold mb-6">Blogs</h1>
 
             <div className="space-y-4">

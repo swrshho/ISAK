@@ -1,5 +1,25 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
+import Header from "@/components/layout/Header";
+import './globals.css'
 
+
+const digiHamishe = localFont({
+  src: [
+    {
+      path: "./fonts/digi-hamishe-regular.ttf",
+      weight: "400",
+      // style: "normal",
+    },
+    {
+      path: "./fonts/digi-hamishe-bold.ttf",
+      weight: "700",
+      // style: "normal",
+    },
+  ],
+  // variable: "--font-digi-hamishe",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +34,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={` h-full antialiased`}
+      className={` h-full antialiased ${digiHamishe.className}`}
+      dir="rtl"
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        {children}
+      </body>
+
     </html>
   );
 }

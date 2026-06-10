@@ -1,0 +1,7 @@
+{
+    "tailwindCSS.files.exclude": [
+        "**/.next/**",
+        "**/node_modules/**"
+    ],
+    "tailwindCSS.inspectPort": 9229
+}

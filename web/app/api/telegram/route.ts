@@ -1,36 +1,21 @@
-import { writeClient } from "@/lib/sanity/clients";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+// import { createClient } from "@sanity/client";
+
+// const sanity = createClient({
+//     projectId: process.env.SANITY_PROJECT_ID!,
+//     dataset: process.env.SANITY_DATASET!,
+//     apiVersion: "2025-01-01",
+//     token: process.env.SANITY_API_TOKEN!,
+//     useCdn: false,
+// });
 
 export async function POST(req: NextRequest) {
-    try {
-        const body = await req.json();
+    const update = await req.json();
 
-        const text = body.message?.text;
+    console.log(
+        "Telegram update:",
+        JSON.stringify(update, null, 2)
+    );
 
-        if (!text) {
-            return Response.json({ ok: true });
-        }
-        console.log("STEP 1: creating post in Sanity");
-
-        const result = await writeClient.create({
-            _type: "post",
-            title: text.substring(0, 25),
-            body: text,
-            slug: {
-                _type: "slug",
-                current: text.toLowerCase().replace(/\s+/g, "-"),
-            },
-            content: [
-                {
-                    _type: "block",
-                    children: [{ _type: "span", text }],
-                },
-            ],
-        });
-
-        console.log("✅ Sanity success:", result);
-        return Response.json({ ok: true });
-    } catch (err) {
-        console.error("❌ Sanity error:", err);
-    }
+    return NextResponse.json({ ok: true });
 }
