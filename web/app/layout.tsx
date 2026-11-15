@@ -1,23 +1,11 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Vazirmatn } from "next/font/google";
 import Header from "@/components/layout/Header";
-import './globals.css'
+import "./globals.css";
 
-
-const digiHamishe = localFont({
-  src: [
-    {
-      path: "./fonts/digi-hamishe-regular.ttf",
-      weight: "400",
-      // style: "normal",
-    },
-    {
-      path: "./fonts/digi-hamishe-bold.ttf",
-      weight: "700",
-      // style: "normal",
-    },
-  ],
-  // variable: "--font-digi-hamishe",
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic", "latin"],
+  weight: "variable",
   display: "swap",
 });
 
@@ -34,14 +22,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={` h-full antialiased ${digiHamishe.className}`}
+      className={`h-full antialiased ${vazirmatn.className}`}
       dir="rtl"
     >
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
       </body>
-
     </html>
   );
 }

@@ -1,6 +1,6 @@
 import ChannelFeedBoard from "@/components/ui/ChannelFeedBoard";
 
-const LangingPage = () => {
+const LandingPage = () => {
     return (
         <div className="flex justify-between items-center">
             <div className="flex justify-between items-center gap-4">
@@ -13,4 +13,4 @@ const LangingPage = () => {
     );
 }
 
-export default LangingPage;
+export default LandingPage;
