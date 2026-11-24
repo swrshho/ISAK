@@ -1,13 +1,12 @@
 import CardFrame from "./CardFrame";
-import telegram from "../../public/telegram.svg"
+import telegram from "../../public/telegram.svg";
 import Image from "next/image";
 import Button from "./Button";
 
 const ChannelFeedBoard = () => {
     return (
         <div className="">
-            <CardFrame className="flex justify-between items-center rounded-2xl w-" styleSvg="w-56 md:w-64 lg:w-96">
-
+            <CardFrame className="flex justify-between items-center rounded-2xl" styleSvg="w-56 md:w-64 lg:w-96">
                 <div className="flex flex-row-reverse justify-start items-center px-4 py-9 gap-6 border-b-2 border-b-border-white">
                     <div className="telegram-icon">
                         <Image
@@ -25,24 +24,36 @@ const ChannelFeedBoard = () => {
                 </div>
 
                 <MessageChip />
+                <MessageChip />
+                <MessageChip />
             </CardFrame>
         </div>
     );
-}
+};
 
 const MessageChip = () => {
     return (
-        <div className="p-4">
-            <time dateTime="2026-01-01" className="text-gray-400 text-sm">۲ روز پیش</time>
+        <article className="space-y-2 rounded-xl border border-gray-100 bg-gray-50 p-3 sm:space-y-3 sm:p-4">
+            <time
+                // dateTime={message.dateTime}
+                className="block text-xs text-gray-400 sm:text-sm"
+            >
+                {/* {message.timeAgo} */}
+                ۲ روز پیش
+            </time>
 
-            <div className="flex justify-between items-center">
-                <p className="[word-spacing:0.15rem]">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                <Button>
-                    بیشتر بخوانید
-                </Button>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+                <p className="min-w-0 flex-1 text-sm leading-7 [word-spacing:0.1rem] sm:text-base sm:leading-8 sm:[word-spacing:0.15rem]">
+                    {/* {message.text} */}
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                    از طراحان گرافیک است. چاپگرها و متون بلکه...
+                </p>
+
+                <div className="shrink-1 self-end sm:self-auto">
+                    <Button>بیشتر بخوانید</Button>
+                </div>
             </div>
-        </div>
-    )
-}
-
+        </article>
+    );
+};
 export default ChannelFeedBoard;
